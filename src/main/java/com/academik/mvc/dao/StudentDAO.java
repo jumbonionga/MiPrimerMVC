@@ -146,5 +146,24 @@ public class StudentDAO implements GeneralDAO<Student> {
             ex.printStackTrace();
         }
     }
+    
+    public double average(long id) {
+        double average = 0;
+        try {
+            Connection conn = CONN_WRAPPER.getConnection();
+            PreparedStatement stmnt = conn.prepareStatement(
+                    "SELECT AVG(grade) AS avg FROM grade"
+                            + " WHERE student_code = ?"
+            );
+            stmnt.setLong(1, id);
+            ResultSet result = stmnt.executeQuery();
+            if(result.next()) {
+                average = result.getDouble("avg");
+            }
+        } catch(ClassNotFoundException | SQLException ex) {
+            ex.printStackTrace();
+        }
+        return average;
+    }
 
 }

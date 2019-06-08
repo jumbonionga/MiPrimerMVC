@@ -9,3 +9,6 @@ El despliegue del proyecto debe hacerse sobre cualquier servidor de aplicaciones
 
 ## Tests
 Se programó un test para garantizar la correcta conexión a la base de datos, este test se encuentra en `src/test/java/com/academik/mvc/CustomConnectionTest.java` para que el comando Clean and Build de NetBeans funcione correctamente será necesario asegurarse que la clase `CustomConnection.java` se encuentre funcionando correctamente.
+
+## Base de datos usada
+PostgreSQL
